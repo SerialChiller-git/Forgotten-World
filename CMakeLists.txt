@@ -38,6 +38,8 @@ link_directories(${CMAKE_SOURCE_DIR}/lib)
 
 # Add executables
 add_executable(client ${CMAKE_SOURCE_DIR}/src/client/client.cpp)
+add_executable(Forgotten_World ${CMAKE_SOURCE_DIR}/src/client/main.cpp
+                                ${CMAKE_SOURCE_DIR}/src/client/Player.cpp)
 add_executable(server ${CMAKE_SOURCE_DIR}/src/server/server.cpp)
 
 # Link ENet library to executables
@@ -51,3 +53,5 @@ else()
     target_link_libraries(client enet)
     target_link_libraries(server enet)
 endif()
+
+target_link_libraries(Forgotten_World PRIVATE SFML::Graphics SFML::Audio ImGui-SFML::ImGui-SFML)
