@@ -9,14 +9,12 @@ private:
     void processEvents();
     void update();
     void render();
+    sf::RenderWindow mWindow;
+    Player player;
 public:
     Game();
     ~Game() = default;
-    void run();
-private:
-    sf::RenderWindow mWindow;
-    Player player;
-
+    void run();    
 };
 
 

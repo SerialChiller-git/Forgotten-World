@@ -37,13 +37,14 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 link_directories(${CMAKE_SOURCE_DIR}/lib)
 
 set(CLIENT_SOURCES 
+    ${CMAKE_SOURCE_DIR}/src/client/main.cpp
     ${CMAKE_SOURCE_DIR}/src/client/Player.cpp
     ${CMAKE_SOURCE_DIR}/src/client/Entity.cpp
     ${CMAKE_SOURCE_DIR}/src/client/Game.cpp
 )
 
 # Add executables
-add_executable(Forgotten_World ${CMAKE_SOURCE_DIR}/src/client/main.cpp ${CLIENT_SOURCES})
+add_executable(Forgotten_World  ${CLIENT_SOURCES})
 add_executable(server ${CMAKE_SOURCE_DIR}/src/server/server.cpp)
 
 # Link ENet library to executables
