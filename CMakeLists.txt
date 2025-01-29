@@ -36,22 +36,32 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 # Link against ENet library
 link_directories(${CMAKE_SOURCE_DIR}/lib)
 
+set(CLIENT_SOURCES 
+    ${CMAKE_SOURCE_DIR}/src/client/Player.cpp
+    ${CMAKE_SOURCE_DIR}/src/client/Entity.cpp
+    ${CMAKE_SOURCE_DIR}/src/client/Game.cpp
+)
+
 # Add executables
-add_executable(client ${CMAKE_SOURCE_DIR}/src/client/client.cpp)
-add_executable(Forgotten_World ${CMAKE_SOURCE_DIR}/src/client/main.cpp
-                                ${CMAKE_SOURCE_DIR}/src/client/Player.cpp)
+add_executable(Forgotten_World ${CMAKE_SOURCE_DIR}/src/client/main.cpp ${CLIENT_SOURCES})
 add_executable(server ${CMAKE_SOURCE_DIR}/src/server/server.cpp)
 
 # Link ENet library to executables
 if(WIN32)
-    target_link_libraries(client enet64)
     target_link_libraries(server enet64)
     # Windows also needs ws2_32 and winmm
-    target_link_libraries(client ws2_32 winmm)
     target_link_libraries(server ws2_32 winmm)
 else()
-    target_link_libraries(client enet)
     target_link_libraries(server enet)
 endif()
 
 target_link_libraries(Forgotten_World PRIVATE SFML::Graphics SFML::Audio ImGui-SFML::ImGui-SFML)
+
+
+add_custom_command(
+    TARGET Forgotten_World POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/src/assets
+    $<TARGET_FILE_DIR:Forgotten_World>/assets
+    COMMENT "Copying assets folder to runtime directory"
+)
