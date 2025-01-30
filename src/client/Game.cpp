@@ -27,6 +27,9 @@ void Game::processEvents(){
 
 void Game::render(){
     mWindow.clear();
+    if(player.invetoryOn){
+        player.drawInvetory(mWindow);
+    }
     mWindow.draw(player);
     mWindow.display();
 }
