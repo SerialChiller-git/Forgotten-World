@@ -9,6 +9,7 @@ Game::Game():
 void Game::run(){
     
     while (mWindow.isOpen()){    
+        deltaTime = deltaClock.restart();
         processEvents();  // Process events  
         render();           // Render the game
     }
@@ -20,7 +21,8 @@ void Game::processEvents(){
             if (event->is<sf::Event::Closed>()){
                 mWindow.close();
             }
-        }
+    }
+    player.update(deltaTime);
 }
 
 void Game::render(){

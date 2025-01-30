@@ -10,6 +10,8 @@ private:
     void update();
     void render();
     sf::RenderWindow mWindow;
+    sf::Clock deltaClock;
+    sf::Time deltaTime;
     Player player;
 public:
     Game();
