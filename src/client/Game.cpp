@@ -4,7 +4,15 @@ Game::Game():
     mWindow(sf::VideoMode({800, 600}), "Forgotten World")
 {
     loadConfig();
+    this->initState();
     player.setPosition({10,10});player.load("assets/player.png", {64,64});
+}
+
+Game::~Game(){
+    while(!this->states.empty()){
+        delete this->states.top();
+        this->states.pop();
+    }
 }
 
 void Game::loadConfig(){
@@ -53,6 +61,14 @@ void Game::processEvents(){
 
 void Game::render(){
     mWindow.clear();
+    if(!this->states.empty()){
+        this->states.top()->update(deltaTime);
+        this->states.top()->render();
+    }
     mWindow.draw(player);
     mWindow.display();
+}
+
+void Game::initState(){
+    this->states.push(new GameState(&this->mWindow));
 }

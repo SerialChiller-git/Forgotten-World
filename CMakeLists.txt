@@ -32,6 +32,8 @@ FetchContent_MakeAvailable(ImGui-SFML)
 # Add ENet include directory
 include_directories(${CMAKE_SOURCE_DIR}/include)
 include_directories(${CMAKE_SOURCE_DIR}/include/Lua)
+include_directories(${CMAKE_SOURCE_DIR}/src/client/states)
+include_directories(${CMAKE_SOURCE_DIR}/src/client)
 # Link against ENet library
 link_directories(${CMAKE_SOURCE_DIR}/lib)
 
@@ -42,6 +44,9 @@ set(CLIENT_SOURCES
     ${CMAKE_SOURCE_DIR}/src/client/Player.cpp
     ${CMAKE_SOURCE_DIR}/src/client/Entity.cpp
     ${CMAKE_SOURCE_DIR}/src/client/Game.cpp
+    ${CMAKE_SOURCE_DIR}/src/client/states/State.cpp
+    ${CMAKE_SOURCE_DIR}/src/client/states/GameState.cpp
+    
 )
 
 # Add executables

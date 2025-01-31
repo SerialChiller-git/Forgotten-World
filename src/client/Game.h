@@ -1,11 +1,5 @@
 #pragma once
-#include<SFML/Graphics.hpp>
-#include<iostream>
-#include "Player.h"
-#include<lua.hpp>
-#include <LuaBridge/LuaBridge.h>
-#include <iostream>
-
+#include "GameState.h"
 class Game
 {
 private:
@@ -17,9 +11,12 @@ private:
     sf::Clock deltaClock;
     sf::Time deltaTime;
     Player player;
+    std::stack<State*> states;
+
+    void initState();
 public:
     Game();
-    ~Game() = default;
+    ~Game();
     void initialize();
     void run();    
 };
