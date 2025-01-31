@@ -30,20 +30,3 @@ void Player::update(sf::Time deltaTime){
     movement.y*= this->speed*deltaTime.asSeconds();
     this->move(movement);
 }
-
-void Player::drawInvetory(sf::RenderWindow& window) const{
-    const auto& items = inventory.getItems();
-    float x = 10.0f;
-    float y = 10.0f;
-    for (const auto& item : items) {
-        std::cout << "inventory";
-        sf::Text text(inventory.font , "");
-        text.setString(item.getName());
-        text.setPosition({x, y + sprite.getGlobalBounds().size.y + 5});
-        text.setCharacterSize(12);
-        text.setFillColor(sf::Color::White);
-        window.draw(text);
-
-        y += sprite.getGlobalBounds().size.y + 30;
-    }
-}

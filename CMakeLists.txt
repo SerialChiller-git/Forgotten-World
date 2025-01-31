@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 project(Forgotten_World)
-
 include(FetchContent)
 FetchContent_Declare(SFML
     GIT_REPOSITORY https://github.com/SFML/SFML.git
@@ -32,9 +31,11 @@ FetchContent_MakeAvailable(ImGui-SFML)
 
 # Add ENet include directory
 include_directories(${CMAKE_SOURCE_DIR}/include)
-
+include_directories(${CMAKE_SOURCE_DIR}/include/Lua)
 # Link against ENet library
 link_directories(${CMAKE_SOURCE_DIR}/lib)
+
+
 
 set(CLIENT_SOURCES 
     ${CMAKE_SOURCE_DIR}/src/client/main.cpp
@@ -56,7 +57,7 @@ else()
     target_link_libraries(server enet)
 endif()
 
-target_link_libraries(Forgotten_World PRIVATE SFML::Graphics SFML::Audio ImGui-SFML::ImGui-SFML)
+target_link_libraries(Forgotten_World PRIVATE SFML::Graphics SFML::Audio ImGui-SFML::ImGui-SFML ${CMAKE_SOURCE_DIR}/lib/lua54.lib)
 
 
 add_custom_command(
@@ -65,4 +66,9 @@ add_custom_command(
     ${CMAKE_SOURCE_DIR}/src/assets
     $<TARGET_FILE_DIR:Forgotten_World>/assets
     COMMENT "Copying assets folder to runtime directory"
+)
+add_custom_command(
+    TARGET Forgotten_World POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/src/config $<TARGET_FILE_DIR:Forgotten_World>/config
 )
