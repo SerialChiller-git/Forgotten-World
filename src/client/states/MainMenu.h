@@ -1,14 +1,14 @@
 #pragma once
 #include "State.h"
 
-class GameState : public State
+class MainMenu : public State
 {
 private:
     virtual void update(sf::Time deltaTIme);
     virtual void render(sf::RenderWindow* target = nullptr);
+    sf::RectangleShape background;
 public:
-    GameState(sf::RenderWindow* window, int& stateIndex);
-    ~GameState();
-    Player player;
+    MainMenu(sf::RenderWindow* window, int& stateIndex);
+    virtual ~MainMenu();
     int& stateIndex;
 };

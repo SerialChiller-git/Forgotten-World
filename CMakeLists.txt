@@ -46,7 +46,7 @@ set(CLIENT_SOURCES
     ${CMAKE_SOURCE_DIR}/src/client/Game.cpp
     ${CMAKE_SOURCE_DIR}/src/client/states/State.cpp
     ${CMAKE_SOURCE_DIR}/src/client/states/GameState.cpp
-    
+    ${CMAKE_SOURCE_DIR}/src/client/states/MainMenu.cpp
 )
 
 # Add executables

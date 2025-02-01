@@ -1,5 +1,6 @@
 #pragma once
 #include "GameState.h"
+#include "MainMenu.h"
 class Game
 {
 private:
@@ -10,15 +11,15 @@ private:
     sf::RenderWindow mWindow;
     sf::Clock deltaClock;
     sf::Time deltaTime;
-    Player player;
-    std::stack<State*> states;
+    int stateIndex = 0;
 
     void initState();
 public:
     Game();
     ~Game();
     void initialize();
-    void run();    
+    void run(); 
+    std::vector<State*> states;   
 };
 
 

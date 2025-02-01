@@ -5,13 +5,13 @@ Game::Game():
 {
     loadConfig();
     this->initState();
-    player.setPosition({10,10});player.load("assets/player.png", {64,64});
+    
 }
 
 Game::~Game(){
     while(!this->states.empty()){
-        delete this->states.top();
-        this->states.pop();
+        delete this->states.back();
+        this->states.pop_back();
     }
 }
 
@@ -56,19 +56,21 @@ void Game::processEvents(){
                 mWindow.close();
             }
     }
-    player.update(deltaTime);
+    if(!this->states.empty()){
+        this->states[stateIndex]->update(deltaTime); //Update a specific state
+    }
 }
 
 void Game::render(){
     mWindow.clear();
     if(!this->states.empty()){
-        this->states.top()->update(deltaTime);
-        this->states.top()->render();
+        this->states[stateIndex]->render(&this->mWindow); //Render a specific state
     }
-    mWindow.draw(player);
+    
     mWindow.display();
 }
 
 void Game::initState(){
-    this->states.push(new GameState(&this->mWindow));
+    this->states.push_back(new MainMenu(&this->mWindow, stateIndex));
+    this->states.push_back(new GameState(&this->mWindow, stateIndex)); 
 }

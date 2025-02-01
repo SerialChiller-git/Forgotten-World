@@ -12,6 +12,10 @@ State::~State()
 void State::update(sf::Time deltaTIme){
 
 }
-void State::render(sf::RenderTarget* target){
+void State::render(sf::RenderWindow* target){
 
+}
+
+void State::changeState(int& stateIndex, int nextIndex){
+    stateIndex = nextIndex;
 }
