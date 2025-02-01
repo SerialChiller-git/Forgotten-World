@@ -41,21 +41,31 @@ void Game::loadConfig(){
 }
 
 void Game::run(){
-    
+    ImGui::SFML::Init(mWindow);
+
     while (mWindow.isOpen()){    
         deltaTime = deltaClock.restart();
         processEvents();  // Process events  
-        render();           // Render the game
+        update();         // Update the game 
+        render();         // Render the game
     }
+
+    ImGui::SFML::Shutdown();
 }
 
 void Game::processEvents(){
      while (const std::optional event = mWindow.pollEvent()){
-            // "close requested" event: we close the window
-            if (event->is<sf::Event::Closed>()){
-                mWindow.close();
-            }
+        // "close requested" event: we close the window
+        ImGui::SFML::ProcessEvent(mWindow, *event);
+        if (event->is<sf::Event::Closed>()){
+            mWindow.close();
+        }
     }
+    
+}
+
+void Game::update(){
+    ImGui::SFML::Update(mWindow, deltaClock.restart());
     if(!this->states.empty()){
         this->states[stateIndex]->update(deltaTime); //Update a specific state
     }
@@ -66,7 +76,10 @@ void Game::render(){
     if(!this->states.empty()){
         this->states[stateIndex]->render(&this->mWindow); //Render a specific state
     }
-    
+    if(!this->states.empty()){
+        this->states[stateIndex]->gui();
+    }
+    ImGui::SFML::Render(mWindow);
     mWindow.display();
 }
 

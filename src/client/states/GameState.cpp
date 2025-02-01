@@ -22,3 +22,7 @@ void GameState::update(sf::Time deltaTIme){
         changeState(stateIndex, 0);
     }
 }
+
+void GameState::gui(){
+    
+}
