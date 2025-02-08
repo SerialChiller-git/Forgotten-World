@@ -85,6 +85,7 @@ add_custom_command(
     $<TARGET_FILE_DIR:Forgotten_World>/assets
     COMMENT "Copying assets folder to runtime directory"
 )
+
 add_custom_command(
     TARGET Forgotten_World POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
