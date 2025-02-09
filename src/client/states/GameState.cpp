@@ -13,6 +13,7 @@ GameState::~GameState()
 }
 
 void GameState::render(sf::RenderWindow* target){
+    target->setView(player.playerView);
     target->draw(player);
 }
 

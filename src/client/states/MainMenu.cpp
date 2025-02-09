@@ -4,7 +4,11 @@ MainMenu::MainMenu(sf::RenderWindow* window, int& stateIndex):
     State(window),
     stateIndex(stateIndex)
 {   
-    background.setSize(sf::Vector2f(window->getSize()));
+    sf::Vector2f size = sf::Vector2f(window->getSize());
+    size.x*= 2;
+    size.y*= 2;
+    background.setSize(size);
+    background.setPosition({0,0});
     background.setFillColor(sf::Color::Magenta);
 }
 
