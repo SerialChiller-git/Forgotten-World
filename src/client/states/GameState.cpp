@@ -18,6 +18,7 @@ void GameState::render(sf::RenderWindow* target){
 }
 
 void GameState::update(sf::Time deltaTIme){
+    this->updateMousePositions();
     player.update(deltaTIme);
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::Escape)){
         changeState(stateIndex, 0);

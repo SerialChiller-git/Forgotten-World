@@ -27,6 +27,7 @@ private:
 public:
     State(sf::RenderWindow* window);
     virtual ~State();
+    virtual void updateMousePositions();
     virtual void update(sf::Time deltaTIme) = 0;
     virtual void render(sf::RenderWindow* target = nullptr) = 0;
     virtual void gui() = 0;
@@ -34,4 +35,7 @@ public:
 protected:
     void changeState(int& stateIndex, int nextIndex);
     sf::RenderWindow* window;
+    sf::Vector2i mousePosScreen;
+    sf::Vector2i mousePosWindow;
+    sf::Vector2f mousePosView;
 };

@@ -5,6 +5,7 @@ Player::Player(){
     playerView.setCenter(this->getPosition()); 
 }
 
+
 void Player::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     states.transform *= getTransform();
     if(alive){

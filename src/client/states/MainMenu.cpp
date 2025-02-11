@@ -18,15 +18,17 @@ MainMenu::~MainMenu()
 }
 
 void MainMenu::render(sf::RenderWindow* target){
+    target->setView(target->getDefaultView());
     target->draw(background);
     
 }
 
 void MainMenu::update(sf::Time deltaTIme){
+    this->updateMousePositions();
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::Num1)){
         changeState(stateIndex, 1);
     }
-    
+    std::cout << mousePosScreen.x << " " << mousePosScreen.y << " ";
 }
 
 void MainMenu::gui(){
