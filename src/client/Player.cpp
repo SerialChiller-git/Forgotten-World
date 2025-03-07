@@ -1,6 +1,7 @@
 #include "Player.h"
 
 Player::Player(){
+    this->setOrigin({32.0f, 32.0f});
     playerView.setSize({600, 800});
     playerView.setCenter(this->getPosition()); 
 }

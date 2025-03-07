@@ -4,12 +4,9 @@ MainMenu::MainMenu(sf::RenderWindow* window, int& stateIndex):
     State(window),
     stateIndex(stateIndex)
 {   
+    this->initBackground();
     sf::Vector2f size = sf::Vector2f(window->getSize());
-    size.x*= 2;
-    size.y*= 2;
-    background.setSize(size);
-    background.setPosition({0,0});
-    background.setFillColor(sf::Color::Magenta);
+
 }
 
 MainMenu::~MainMenu()
@@ -17,9 +14,26 @@ MainMenu::~MainMenu()
 
 }
 
+void MainMenu::initBackground(){
+    this->background.setSize(
+        sf::Vector2f
+        ({
+            static_cast<float>(this->window->getSize().x),
+            static_cast<float>(this->window->getSize().y)
+        })
+    );
+    if(!this->backgroundTexture.loadFromFile("assets/backgrounds/background1.jpeg")){
+        throw "ERROR::MAINMENUSTATE::FAILED_TO_LOAD_BACKGROUND_TEXTURE";
+    }
+    this->background.setTexture(&this->backgroundTexture);
+    // this->background.setPosition({this->window->getPosition().x/2, this->window->getPosition().y/2});
+
+}
+
 void MainMenu::render(sf::RenderWindow* target){
     target->setView(target->getDefaultView());
     target->draw(background);
+    //std::cout << this->window->getSize().x << " " << this->window->getSize().y << "\n";
     
 }
 
@@ -28,7 +42,7 @@ void MainMenu::update(sf::Time deltaTIme){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::Num1)){
         changeState(stateIndex, 1);
     }
-    std::cout << mousePosScreen.x << " " << mousePosScreen.y << " ";
+    //std::cout << mousePosScreen.x << " " << mousePosScreen.y << " ";
 }
 
 void MainMenu::gui(){

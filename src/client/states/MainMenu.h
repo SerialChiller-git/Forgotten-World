@@ -8,6 +8,8 @@ private:
     virtual void render(sf::RenderWindow* target = nullptr);
     virtual void gui();
     sf::RectangleShape background;
+    sf::Texture backgroundTexture;
+    void initBackground();
 public:
     MainMenu(sf::RenderWindow* window, int& stateIndex);
     virtual ~MainMenu();

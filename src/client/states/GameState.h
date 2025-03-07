@@ -7,6 +7,7 @@ private:
     virtual void update(sf::Time deltaTIme);
     virtual void render(sf::RenderWindow* target = nullptr);
     virtual void gui();
+    
 public:
     GameState(sf::RenderWindow* window, int& stateIndex);
     ~GameState();

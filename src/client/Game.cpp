@@ -2,9 +2,10 @@
 
 Game::Game():
     mWindow(sf::VideoMode({800, 600}), "Forgotten World")
-{
+{   
+
     loadConfig();
-    this->initState();
+    this->initState();    
     
 }
 
@@ -26,11 +27,11 @@ void Game::loadConfig(){
     try {
         luabridge::LuaRef config = luabridge::getGlobal(L, "config");
         if (config.isTable()) {
-            int width = config["window"]["width"].cast<int>();
-            int height = config["window"]["height"].cast<int>();
-            sf::Vector2u mWindow_bounds(width, height);
+            int windowX = config["window"]["width"].cast<int>();
+            int windowY = config["window"]["height"].cast<int>();
+            sf::Vector2u mWindow_bounds(windowX, windowY);
             mWindow.setSize(mWindow_bounds);
-            std::cout << "Window size set to: " << width << "x" << height << std::endl;
+            std::cout << "Window size set to: " << windowX << "x" << windowY << std::endl;
         } else {
             std::cerr << "Error: 'config' is not a table" << std::endl;
         }
