@@ -24,3 +24,14 @@ If you’re into C++, SFML, or just curious about making MMOs, I’d love your h
 Whether it’s coding, art, or ideas — contributions and discussions are very welcome.
 
 Let’s build this little world together, one step at a time :)
+
+---
+
+## How to Contribute
+
+1. Fork the repository and clone it locally.  
+2. Make sure you have C++ compiler and CMake installed.  
+3. Create a build directory and navigate into it:
+   ```bash
+   mkdir build
+   cd build
