@@ -14,5 +14,6 @@ public:
     ~GameState();
     Player player;
     Inventory inventory;
+    StartMap map;
     int& stateIndex;
 };

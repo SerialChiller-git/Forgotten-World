@@ -17,7 +17,7 @@ Game::~Game(){
 }
 
 void Game::loadConfig(){
-    mWindow.setSize(sf::Vector2u(800, 600));
+    mWindow.setSize(sf::Vector2u(800, 800));
     return;
 }
 

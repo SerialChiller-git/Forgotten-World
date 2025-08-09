@@ -8,7 +8,7 @@
 #include<vector>
 #include<stack>
 #include<map>
-
+#include<StartMap.h>
 #include<SFML/System.hpp>
 #include<SFML/Graphics.hpp>
 #include<SFML/Window.hpp>
