@@ -35,3 +35,22 @@ Let’s build this little world together, one step at a time :)
    ```bash
    mkdir build
    cd build
+   ```
+4. Run CMake to generate build files:
+    ```bash
+    cmake ..
+    ```
+5. Build the project:
+    ```bash
+    cmake --build .
+    ```
+6. Run the executable from the build directory.
+7. Make your changes, test them, and submit a pull request!
+
+If you have questions or ideas, feel free to open an issue or start a discussion.
+
+---
+
+Thanks for stopping by :) 
+
+
