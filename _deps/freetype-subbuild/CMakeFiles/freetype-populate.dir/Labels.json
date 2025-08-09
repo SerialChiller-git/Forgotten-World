@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/freetype-populate"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/669a80ce28befdeda299b0cc794d3c75/freetype-populate.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/42e4dbc33d4438c884504f28e9f49ad8/freetype-populate-complete.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-build.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-configure.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-download.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-install.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-mkdir.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-patch.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-test.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"freetype-populate"
+		],
+		"name" : "freetype-populate"
+	}
+}

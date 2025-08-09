@@ -7,6 +7,7 @@ private:
     virtual void update(sf::Time deltaTIme);
     virtual void render(sf::RenderWindow* target = nullptr);
     virtual void gui();
+    virtual void processEvents(const sf::Event event);
     sf::RectangleShape background;
     sf::Texture backgroundTexture;
     void initBackground();

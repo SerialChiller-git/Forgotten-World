@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/sfml-populate"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/960415c3d20e3bcd0fb0c76b5b95244e/sfml-populate.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/9861f46851b97aac34f9e22e20861479/sfml-populate-complete.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/3685390dd5b92b60bbcecab01ea884bd/sfml-populate-build.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/3685390dd5b92b60bbcecab01ea884bd/sfml-populate-configure.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/3685390dd5b92b60bbcecab01ea884bd/sfml-populate-download.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/3685390dd5b92b60bbcecab01ea884bd/sfml-populate-install.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/3685390dd5b92b60bbcecab01ea884bd/sfml-populate-mkdir.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/3685390dd5b92b60bbcecab01ea884bd/sfml-populate-patch.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/3685390dd5b92b60bbcecab01ea884bd/sfml-populate-test.rule"
+		},
+		{
+			"file" : "E:/C++/Games/mmo/_deps/sfml-subbuild/CMakeFiles/3685390dd5b92b60bbcecab01ea884bd/sfml-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sfml-populate"
+		],
+		"name" : "sfml-populate"
+	}
+}

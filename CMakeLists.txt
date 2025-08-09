@@ -37,6 +37,7 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 include_directories(${CMAKE_SOURCE_DIR}/include/Lua)
 include_directories(${CMAKE_SOURCE_DIR}/src/client/states)
 include_directories(${CMAKE_SOURCE_DIR}/src/client)
+include_directories($(CMAKE_SOURCE_DIR)/src/client/utils)
 
 # Link ENet (cross-platform)
 if(WIN32)
@@ -51,6 +52,7 @@ set(CLIENT_SOURCES
     ${CMAKE_SOURCE_DIR}/src/client/states/State.cpp
     ${CMAKE_SOURCE_DIR}/src/client/states/GameState.cpp
     ${CMAKE_SOURCE_DIR}/src/client/states/MainMenu.cpp
+    ${CMAKE_SOURCE_DIR}/src/client/utils/Inventory.cpp
 )
 
 # Add executables

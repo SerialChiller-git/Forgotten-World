@@ -1,0 +1,14 @@
+# Target labels
+ freetype-populate
+# Source files and their labels
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/freetype-populate
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/669a80ce28befdeda299b0cc794d3c75/freetype-populate.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/42e4dbc33d4438c884504f28e9f49ad8/freetype-populate-complete.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-build.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-configure.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-download.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-install.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-mkdir.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-patch.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-test.rule
+E:/C++/Games/mmo/_deps/freetype-subbuild/CMakeFiles/d1dfcc1d1326970a6afcc08ff7fe86ea/freetype-populate-update.rule

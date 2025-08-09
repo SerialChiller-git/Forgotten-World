@@ -1,9 +1,8 @@
 #pragma once
 #include<SFML/Graphics.hpp>
 #include<iostream>
-#include "Player.h"
-#include<lua.hpp>
-#include <LuaBridge/LuaBridge.h>
+#include <Player.h>
+#include <Inventory.h>
 #include<ctime>
 #include<fstream>
 #include<vector>
@@ -31,6 +30,7 @@ public:
     virtual void update(sf::Time deltaTIme) = 0;
     virtual void render(sf::RenderWindow* target = nullptr) = 0;
     virtual void gui() = 0;
+    virtual void processEvents(const sf::Event event) = 0;
     
 protected:
     void changeState(int& stateIndex, int nextIndex);

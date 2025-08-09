@@ -77,3 +77,7 @@ void MainMenu::gui(){
     ImGui::End();
     ImGui::PopStyleVar(2);
 }
+
+void MainMenu::processEvents(const sf::Event event){
+
+}

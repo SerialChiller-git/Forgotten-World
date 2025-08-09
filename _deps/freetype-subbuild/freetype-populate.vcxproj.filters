@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\d1dfcc1d1326970a6afcc08ff7fe86ea\freetype-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\d1dfcc1d1326970a6afcc08ff7fe86ea\freetype-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\d1dfcc1d1326970a6afcc08ff7fe86ea\freetype-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\d1dfcc1d1326970a6afcc08ff7fe86ea\freetype-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\d1dfcc1d1326970a6afcc08ff7fe86ea\freetype-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\d1dfcc1d1326970a6afcc08ff7fe86ea\freetype-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\d1dfcc1d1326970a6afcc08ff7fe86ea\freetype-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\d1dfcc1d1326970a6afcc08ff7fe86ea\freetype-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\42e4dbc33d4438c884504f28e9f49ad8\freetype-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\669a80ce28befdeda299b0cc794d3c75\freetype-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\C++\Games\mmo\_deps\freetype-subbuild\CMakeFiles\freetype-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{73972650-6253-353E-9E0F-C7DA2E2A6743}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
