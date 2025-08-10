@@ -16,4 +16,5 @@ public:
     Inventory inventory;
     StartMap map;
     int& stateIndex;
+    std::vector<Collider> colliders;
 };

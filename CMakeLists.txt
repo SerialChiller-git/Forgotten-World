@@ -55,6 +55,7 @@ set(CLIENT_SOURCES
     ${CMAKE_SOURCE_DIR}/src/client/states/GameState.cpp
     ${CMAKE_SOURCE_DIR}/src/client/states/MainMenu.cpp
     ${CMAKE_SOURCE_DIR}/src/client/utils/Inventory.cpp
+    ${CMAKE_SOURCE_DIR}/src/client/utils/Collider.cpp
     ${CMAKE_SOURCE_DIR}/src/client/maps/StartMap.cpp
 )
 

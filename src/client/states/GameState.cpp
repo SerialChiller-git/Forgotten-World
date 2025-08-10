@@ -5,7 +5,7 @@ GameState::GameState(sf::RenderWindow* window, int& stateIndex):
     State(window),
     stateIndex(stateIndex)
 {   
-    player.setPosition({10,10});player.load("assets/player.png", {64,64});
+    player.setPosition({50,50});player.load("assets/player.png", {32,32});
     inventory.load("assets/inventory_slot.png", {32,32});
 
     const int level[] = {
@@ -55,6 +55,25 @@ GameState::GameState(sf::RenderWindow* window, int& stateIndex):
     if(!map.load("assets/tilemaps/GroundTilemap.png", sf::Vector2u(32, 32), level, 40, 40)){
         throw "ERROR::GAMESTATE::FAILED_TO_LOAD_MAP";
     }
+    // Map dimensions (example: 40 x 40 tiles at 32px each)
+    const float mapWidth = 40 * 32.f;
+    const float mapHeight = 40 * 32.f;
+    
+    // Create colliders for each edge (or one collider for the whole map and then check bounds)
+    // For example, here are four boundaries as thin rectangles:
+    float thickness = 10.f;  // thickness of the collider
+    
+    // Left collider
+    colliders.emplace_back(sf::FloatRect({-thickness, 0.f}, {thickness, mapHeight}));
+    // Right collider
+    colliders.emplace_back(sf::FloatRect({mapWidth, 0.f}, {thickness, mapHeight}));
+    // Top collider
+    colliders.emplace_back(sf::FloatRect({0.f, -thickness}, {mapWidth, thickness}));
+    // Bottom collider
+    colliders.emplace_back(sf::FloatRect({0.f, mapHeight}, {mapWidth, thickness}));
+
+    
+
 }
 
 GameState::~GameState()
@@ -65,6 +84,9 @@ void GameState::render(sf::RenderWindow* target){
     target->setView(player.playerView);
 
     target->draw(map);
+    for(auto collider : colliders){
+        collider.draw(*target);
+    }
     target->draw(player);
     target->draw(inventory);
 }
@@ -73,6 +95,21 @@ void GameState::update(sf::Time deltaTIme){
     this->updateMousePositions();
     player.update(deltaTIme);
 
+    sf::FloatRect playerBounds({static_cast<float>(player.getPosition().x - player.getOrigin().x),
+                                static_cast<float>(player.getPosition().y - player.getOrigin().y)},{
+                                32.f, 32.f}); // assuming 64x64 sprite
+
+    // Check for collisions against all colliders:
+    for(const auto& collider : colliders){
+        //std::cout << collider.bounds.position.x << " " << collider.bounds.position.y << " , " << player.getPosition().x << " , " << player.getPosition().y << "\n";
+        if(playerBounds.findIntersection(collider.bounds)){
+            std::cout << collider.bounds.position.x << " " << collider.bounds.position.y << " , " << player.getPosition().x << " , " << player.getPosition().y << "\n";
+            
+        }
+        
+    }
+
+    
     inventory.setPosition( player.getPosition() + sf::Vector2f(50.f, 50.f));
     
 }
