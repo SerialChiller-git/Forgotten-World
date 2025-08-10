@@ -3,9 +3,12 @@
 bool StartMap::load(const std::string& tileset, sf::Vector2u tileSize, const int* tiles, unsigned int width,
     unsigned int height)
 {
-    if (!m_tileset.loadFromFile(tileset))
+    if (!m_tileset.loadFromFile(tileset)){
             return false;
-
+    }
+       
+        this->map_width = width;
+        this->map_height = height;
         // resize the vertex array to fit the level size
         m_vertices.setPrimitiveType(sf::PrimitiveType::Triangles);
         m_vertices.resize(width * height * 6);
