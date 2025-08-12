@@ -94,10 +94,9 @@ void GameState::render(sf::RenderWindow* target){
 void GameState::update(sf::Time deltaTIme){
     this->updateMousePositions();
     
-
-    sf::FloatRect playerBounds({static_cast<float>(player.getPosition().x - player.getOrigin().x),
-                                static_cast<float>(player.getPosition().y - player.getOrigin().y)},{
-                                64.f, 64.f}); // assuming 64x64 sprite
+    sf::FloatRect playerBounds({static_cast<float>(player.getPosition().x  - player.getOrigin().x ),
+                                static_cast<float>(player.getPosition().y  - player.getOrigin().y )},{
+                                64.f, 64.f}); 
 
     // Check for collisions against all colliders:
     for(const auto& collider : colliders){
@@ -116,19 +115,21 @@ void GameState::update(sf::Time deltaTIme){
             float colliderRight = collider.bounds.position.x + collider.bounds.size.x;
             float colliderBottom = collider.bounds.position.y + collider.bounds.size.y;
 
+            // player bottom
             if(playerBottom > colliderTop && playerBottom < colliderBottom &&
                 playerLeft > colliderLeft && playerRight < colliderRight
             )
             {   
                 player.isColliding = true;
-                player.setPosition(sf::Vector2f({playerBounds.position.x, collider.bounds.position.y - playerBounds.size.y }));
+                player.setPosition(sf::Vector2f({playerBounds.position.x+32 , collider.bounds.position.y - playerBounds.size.y + 32 }));
             }
+            // player top
             if(playerTop < colliderBottom && playerTop > colliderTop &&
                 playerLeft > colliderLeft && playerRight < colliderRight
             )
             {   
                 player.isColliding = true;
-                player.setPosition(sf::Vector2f({playerBounds.position.x+32, collider.bounds.position.y + collider.bounds.size.y + playerBounds.size.y }));
+                player.setPosition(sf::Vector2f({playerBounds.position.x+32, collider.bounds.position.y + collider.bounds.size.y + playerBounds.size.y - 32 }));
             }
             
         }
