@@ -16,4 +16,5 @@ public:
     bool isColliding = false;
     void update(sf::Time deltaTime);
     sf::View playerView;
+    sf::Vector2f movement;
 };

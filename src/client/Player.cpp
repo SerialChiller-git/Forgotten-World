@@ -20,7 +20,7 @@ void Player::setTextureIndex(int x, int y){
 
 void Player::update(sf::Time deltaTime){
     playerView.setCenter(this->getPosition());
-    sf::Vector2f movement = {0,0};
+    movement = {0,0};
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){
         this->setTextureIndex(3,0);
         movement.x -= 1;                    
@@ -40,6 +40,8 @@ void Player::update(sf::Time deltaTime){
     movement = normalize(movement);
     movement.x*= this->speed*deltaTime.asSeconds();
     movement.y*= this->speed*deltaTime.asSeconds();
-    this->move(movement);
+    if(!isColliding){
+        this->move(movement);
+    }
 
 }

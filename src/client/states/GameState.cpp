@@ -5,7 +5,7 @@ GameState::GameState(sf::RenderWindow* window, int& stateIndex):
     State(window),
     stateIndex(stateIndex)
 {   
-    player.setPosition({50,50});player.load("assets/player.png", {32,32});
+    player.setPosition({50,50});player.load("assets/player.png", {64,64});
     inventory.load("assets/inventory_slot.png", {32,32});
 
     const int level[] = {
@@ -93,23 +93,52 @@ void GameState::render(sf::RenderWindow* target){
 
 void GameState::update(sf::Time deltaTIme){
     this->updateMousePositions();
-    player.update(deltaTIme);
+    
 
     sf::FloatRect playerBounds({static_cast<float>(player.getPosition().x - player.getOrigin().x),
                                 static_cast<float>(player.getPosition().y - player.getOrigin().y)},{
-                                32.f, 32.f}); // assuming 64x64 sprite
+                                64.f, 64.f}); // assuming 64x64 sprite
 
     // Check for collisions against all colliders:
     for(const auto& collider : colliders){
         //std::cout << collider.bounds.position.x << " " << collider.bounds.position.y << " , " << player.getPosition().x << " , " << player.getPosition().y << "\n";
         if(playerBounds.findIntersection(collider.bounds)){
-            std::cout << collider.bounds.position.x << " " << collider.bounds.position.y << " , " << player.getPosition().x << " , " << player.getPosition().y << "\n";
+            std::cout << collider.bounds.position.x << " " << collider.bounds.position.y << " , " << playerBounds.position.x << " , " << playerBounds.position.y << "\n";
+            //std::cout << &collider << "\n";
+
+            float playerTop = playerBounds.position.y;
+            float playerLeft = playerBounds.position.x;
+            float playerRight = playerBounds.position.x + playerBounds.size.x;
+            float playerBottom = playerBounds.position.y + playerBounds.size.y;
+
+            float colliderTop = collider.bounds.position.y;
+            float colliderLeft = collider.bounds.position.x;
+            float colliderRight = collider.bounds.position.x + collider.bounds.size.x;
+            float colliderBottom = collider.bounds.position.y + collider.bounds.size.y;
+
+            if(playerBottom > colliderTop && playerBottom < colliderBottom &&
+                playerLeft > colliderLeft && playerRight < colliderRight
+            )
+            {   
+                player.isColliding = true;
+                player.setPosition(sf::Vector2f({playerBounds.position.x, collider.bounds.position.y - playerBounds.size.y }));
+            }
+            if(playerTop < colliderBottom && playerTop > colliderTop &&
+                playerLeft > colliderLeft && playerRight < colliderRight
+            )
+            {   
+                player.isColliding = true;
+                player.setPosition(sf::Vector2f({playerBounds.position.x+32, collider.bounds.position.y + collider.bounds.size.y + playerBounds.size.y }));
+            }
             
         }
+
+        
         
     }
 
-    
+        player.update(deltaTIme);
+        player.isColliding = false;
     inventory.setPosition( player.getPosition() + sf::Vector2f(50.f, 50.f));
     
 }
